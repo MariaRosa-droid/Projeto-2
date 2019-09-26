@@ -1,29 +1,14 @@
-from django.contrib import admin
-
 # Register your models here.
-from  .models import Contato
-
-from django.contrib import admin
-
-from .models import Livraria
-
-from django.contrib import admin
-
-from  .models import Despesa
-
-from django.contrib import admin
-
-from .models import Compras
-
-from django.contrib import admin
-
-from .models import Apartamento
-
 from django.contrib import admin
 
 from .models import Anuncio
+from .models import Apartamento
+from .models import Compras
+from .models import Contato
+from .models import Despesa
+from .models import Livraria
+from .models import Pedido
 
-from django.contrib import admin
 
 class ContatoAdmin(admin.ModelAdmin):
     list_display = ('nome', 'email', 'telefone')
@@ -54,3 +39,9 @@ class AnuncioAdmin(admin.ModelAdmin):
     list_display = ('cliente', 'textoTitulo', 'textoAnuncio', 'nomeContato', 'telefone', 'secao', 'tipoAnuncio')
 
 admin.site.register(Anuncio, AnuncioAdmin)
+
+
+class PedidoAdmin(admin.ModelAdmin):
+    list_display = ('tipo_categoria', 'precoMaximo')
+
+admin.site.register(Pedido, PedidoAdmin)
